@@ -1,0 +1,159 @@
+:root {
+    --text: #f5c97d;
+    --border: #FB9901;
+    --background: #131312;
+}
+
+/* ------ FIREFOX NEW TAB ------ */
+@-moz-document url(about:newtab), url(about:home) {
+    /* ALL */
+    :root {
+        text-transform: lowercase !important;
+        border-radius: 0 !important;
+    }
+
+    /* Remove if you want to use the background-color of your theme: */
+    body {
+        background-color: var(--background) !important;
+    }
+
+    button, a {
+        box-sizing: border-box !important;
+        border: 1px solid transparent !important;
+    }
+
+    button:hover, a:hover {
+        border-color: var(--border) !important;
+    }
+
+    span {
+        color: var(--text) !important;
+    }
+
+    /* FIREFOX LOGO */
+    .logo-and-wordmark{
+        position: relative !important;
+    }
+
+    .logo, .wordmark {
+        display: none !important;
+    }
+
+    /* ASCII created using https://www.asciiart.eu/text-to-ascii-art with the 'Alligator2' font */
+    .logo-and-wordmark::before {
+        content: '\A
+:::::::::: ::::::::::: :::::::::  :::::::::: :::::::::: ::::::::  :::    :::\A
+:+:            :+:     :+:    :+: :+:        :+:       :+:    :+: :+:    :+:\A
++:+            +:+     +:+    +:+ +:+        +:+       +:+    +:+  +:+  +:+ \A
+:#::+::#       +#+     +#++:++#:  +#++:++#   :#::+::#  +#+    +:+   +#++:+  \A
++#+            +#+     +#+    +#+ +#+        +#+       +#+    +#+  +#+  +#+ \A
+#+#            #+#     #+#    #+# #+#        #+#       #+#    #+# #+#    #+#\A
+###        ########### ###    ### ########## ###        ########  ###    ###\A
+\A
+';
+    }
+
+    @keyframes ascii-anim {
+        25% {
+            content: '~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.';
+        }
+        50% {
+            content: '.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~';
+        }
+        75% {
+            content: '~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙';
+        }
+    }
+
+    .logo-and-wordmark::after {
+        content: '˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~˙~.~';
+    }
+
+    .logo-and-wordmark::before, .logo-and-wordmark::after {
+        top: 0 !important;
+        left: 0 !important;
+        white-space: pre-wrap !important;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 12px;
+        display: inline-block;
+        background: linear-gradient(to bottom, #ffae00, #ff0000);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 7px rgba(255, 0, 0, 0.89), 0 0 16px rgba(255, 60, 0, 0.877);
+        transition: 0.25s;
+    }
+
+    .logo-and-wordmark::after {
+        animation: ascii-anim 0.75s infinite;
+        padding-top: 120px;
+        position: absolute !important;
+        text-align: center !important;
+        width: 100%;
+    }
+
+    /* SEARCH BAR */
+    .search-wrapper {
+        padding: 0 !important;
+    }
+
+    .search-handoff-button {
+        background-color: transparent !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 0px !important;
+    }
+
+    .context-menu-add-engine { display: none !important }
+
+    .search-wrapper {
+        padding-bottom: 0px !important;
+    }
+
+    .search-wrapper .search-handoff-button, .search-wrapper input {
+        --newtab-search-icon: url('');
+        padding-inline-start: 12px !important;
+        padding-inline-end: 12px !important;
+        background-size: 18px !important;
+        background-color: transparent !important;
+    }
+
+    .fake-textbox {
+        position: relative !important;
+        color: transparent !important;
+        opacity: 1.0 !important;
+    }
+
+    .fake-textbox::after {
+        content: "search..." !important;
+        color: var(--text) !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+    }
+
+    .fake-caret {
+        inset-inline-start: 12px !important;
+    }
+
+    /* PINNED TILES */
+    .top-site-button .tile {
+        display: none !important;
+    }
+
+    .top-site-button {
+        padding: 0px !important;
+    }
+
+    .pinned {
+        padding: 0 !important;
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
+
+    .icon-pin-small, .sponsored-label {
+        display: none !important;
+    }
+
+    .search-inner-wrapper {
+        width: 96% !important;
+    }
+}
